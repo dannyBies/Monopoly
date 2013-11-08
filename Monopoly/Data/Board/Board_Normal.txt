@@ -1,0 +1,42 @@
+﻿int rent, int mortage, int price
+
+start@Start@200
+property@Mediterranean avenue@60@2@30
+community@Community@
+property@Baltic Avenue@80@60@4@30
+tax@Income tax@200
+railroad@Reading railroad@200@200@25@100
+property@Oriental avenue@100@100@6@50
+chance@Chance@
+property@Vermont Avenue@100@100@6@50
+property@Connecticut Avenue@120@120@8@
+jailvisit@Visit jail@
+property@St. Charles place@140
+company@Electric Company@150
+property@States Avenue@140
+property@Virinia Avenue@160
+railroad@Pennsylvania Railroad@200
+property@St. James place@120
+community@Community@
+property@Tennessee Avenue@120
+property@Ney york Avenue@120
+parking@Free parking@
+property@Kentucky avenue@120
+chance@Chance@
+property@Indiana avenue@120
+property@Illinois avenue@120
+railroad@B&O railroad@200
+property@Atlantic avenue@260
+property@Ventnor Avenue@260
+property@Water works@150
+property@Marvin Gardens@280
+gotojail@Jail@
+property@Pacific avenue@300
+property@North Carolina Avenue@
+community@Community@
+property@Pennsylvania avenue@320
+railroad@Short Line@200
+chance@Chance@
+property@Park Place@350
+tax@Luxury tax Tax@75
+property@Boardwalk@400

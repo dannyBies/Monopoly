@@ -1,0 +1,19 @@
+﻿move@go back 3 spaces@-3
+money@bank pays you dividend of $50@50
+money@pay por tax of $15@-15
+move@take a walk on the Boardwalk, advance to Boardwalk@Boardwalk
+money@you have won a crossword competition - Collect $100@100
+money@your building and loan matures - Collect $150@150
+move@advance to start@Start
+money@bank error in your favor - Collect $200@200
+money@doctor's fees - Pay $50@-50
+move@go directly to jail - Do not pass start@Jail
+money@pay hospital fees of $100@-100
+money@income tax refund - Collect $20@20
+money@pay school fees of $150@-150
+money@receive $25 consultancy fee@25
+money@you have won second prize in a beauty contest - Collect #10@10
+money@you inherit $100@100
+move@go back 2 spaces@-2
+move@go 2 spaces forward@2
+move@go 3 spaces forward@3

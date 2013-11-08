@@ -1,0 +1,23 @@
+﻿<Window x:Class="Monopoly.View.Menu"
+         xmlns="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resources="clr-namespace:Monopoly.Properties" 
+     xmlns:viewmodels="clr-namespace:Monopoly.ViewModel"
+        Title="Monopoly V0.2"  Height="607.2" Width="813" ResizeMode="NoResize" Icon="/Monopoly;component/Data/Images/Icon.jpg" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodels:MenuViewModel/>
+    </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="/Monopoly;component/Data/Images/MenuPic.jpg"></ImageBrush>
+    </Window.Background>
+    
+    <Grid>
+        <Button Content="{Binding Source={x:Static resources:Language.newgame}}"  Command="{Binding StartNewGameCommand}" HorizontalAlignment="Left" Height="67" Margin="55,198,0,0" VerticalAlignment="Top" Width="157" />
+        <Button Content="Load a saved game" Command="{Binding OpenFileCommand}" HorizontalAlignment="Left" Height="67" Margin="605,198,0,0" VerticalAlignment="Top" Width="157"/>
+        <ComboBox Name="PlayerBox" ItemsSource="{Binding MaxPlayers}" HorizontalAlignment="Left" 
+                  SelectedValue="{Binding TotalPlayers}" Height="25" Margin="170,168,0,0" VerticalAlignment="Top" Width="42" IsReadOnly="True"/>
+        <Label Content="Amount of players:" HorizontalAlignment="Left" Height="25" Margin="55,168,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button Command="{Binding ChangeLanguageCommand}" Content="Change Language" HorizontalAlignment="Left" Height="36" Margin="55,288,0,0" VerticalAlignment="Top" Width="157"/>
+
+    </Grid>
+</Window>
