@@ -16,8 +16,7 @@ namespace Monopoly.Model.Tiles {
 			CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
 			if(Owner != null && !Owner.Equals(player)) {
 				int moneyToPay = (Owner.TotalCompanies >= 2) ? player.DiceEyes * 10 : player.DiceEyes * 4;
-				player.Money -= moneyToPay;
-				Owner.Money += moneyToPay;
+                player.PayMoneyTo(Owner, moneyToPay);
 				CurrentGame.GameInfo.Enqueue(player.Name + " paid $" + moneyToPay + " to " + Owner.Name);
 			}
 		}

@@ -20,18 +20,15 @@ namespace Monopoly.Model.Tiles {
 			if(Owner != null && !player.Equals(Owner)) {
 				if(City.OwnsAllProperties(Owner)) {
 					if(TotalUpgrades == 0 && !OnMortage) {
-						player.Money -= Rent[TotalUpgrades] * 2;
-						Owner.Money += Rent[TotalUpgrades] * 2;
+                        player.PayMoneyTo(Owner, Rent[TotalUpgrades] * 2);
 						CurrentGame.GameInfo.Enqueue(player.Name + " paid $" + Rent[TotalUpgrades] * 2 + " to " + Owner.Name);
 					} else {
-						player.Money -= Rent[TotalUpgrades];
-						Owner.Money += Rent[TotalUpgrades];
+                        player.PayMoneyTo(Owner, Rent[TotalUpgrades]);
 						CurrentGame.GameInfo.Enqueue(player.Name + " paid $" + Rent[TotalUpgrades] + " to " + Owner.Name);
 					}
 
 				} else {
-					player.Money -= Rent[TotalUpgrades];
-					Owner.Money += Rent[TotalUpgrades];
+                    player.PayMoneyTo(Owner, Rent[TotalUpgrades]);
 					CurrentGame.GameInfo.Enqueue(player.Name + " paid $" + Rent[TotalUpgrades] + " to " + Owner.Name);
 				}
 

@@ -10,9 +10,8 @@ namespace Monopoly.Model.Tiles {
             CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
 
             if (Owner != null && !player.Equals(Owner)) {
-                int toPay = Rent[Owner.TotalRailRoads-1]; 
-                player.Money -= toPay;
-                Owner.Money += toPay;
+                int toPay = Rent[Owner.TotalRailRoads-1];
+                player.PayMoneyTo(Owner, toPay);
                 CurrentGame.GameInfo.Enqueue(player.Name + " paid $" + toPay + " to " + Owner.Name);
             }
         }

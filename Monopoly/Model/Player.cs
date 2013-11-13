@@ -52,6 +52,11 @@ namespace Monopoly.Model {
 			Streets = new ObservableCollection<Tile>();
 		}
 
+        public void PayMoneyTo(Player otherplayer, int moneyToPay) {
+            Money-= moneyToPay;
+            otherplayer.Money += moneyToPay;
+        }
+
 		/// <summary>
 		/// moves the player forwards or backwards on the board
 		/// </summary>
