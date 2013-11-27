@@ -7,26 +7,19 @@ namespace Monopoly.Model.Tiles {
             : base(game, description, rent, mortage, price) {
         }
         public override void DoAction(Player player) {
-            CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description));
 
             if (Owner != null && !player.Equals(Owner)) {
                 int toPay = Rent[Owner.TotalRailRoads-1];
                 player.PayMoneyTo(Owner, toPay);
-                CurrentGame.GameInfo.Enqueue(player.Name + " paid $" + toPay + " to " + Owner.Name);
+                CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.pay, player.Name, toPay, Owner.Name));
             }
         }
 
 	    public override string GetCardInformation()
 	    {
-			string railRoadOwner = (Owner == null) ? "nobody" : Owner.Name;
-			return Description + Environment.NewLine +
-				"this railroad is currently owned by " + railRoadOwner + Environment.NewLine +
-				"it costs $" + Price + " to buy this" + Environment.NewLine +
-				"Rent when you have 1 railroad: $" + Rent[0] + Environment.NewLine +
-				"Rent when you have 2 railroad: $" + Rent[0] * 2 + Environment.NewLine +
-				"Rent when you have 3 railroad: $" + Rent[0] * 4 + Environment.NewLine +
-				"Rent when you have 4 railroad: $" + Rent[0] * 8 + Environment.NewLine +
-				"Mortgage value: $" + Mortage;
+			string railRoadOwner = (Owner == null) ? Properties.Language.propertyowner : Owner.Name;
+            return String.Format(Properties.Language.railroad, Description, Environment.NewLine, railRoadOwner, Price, Rent[0], Rent[0] * 2, Rent[0] * 4, Rent[0] * 8, Mortage);
 	    }
     }
 }

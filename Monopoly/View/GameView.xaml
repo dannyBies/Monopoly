@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Monopoly.View.GameView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resources="clr-namespace:Monopoly.Properties" 
         Title="Monopoly V0.2" Height="712.533" Width="1004" ResizeMode="NoResize" Icon="/Data/Images/Icon.jpg" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
@@ -17,14 +18,14 @@
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Data/Images/Board.jpg" Width="675" Height="675"/>
         <Label Content="Monopoly" HorizontalAlignment="Left" Height="65" Margin="737,-3,0,0" VerticalAlignment="Top" Width="211" FontSize="40" FontFamily="Microsoft YaHei"/>
 
-        <Button Command="{Binding ThrowDiceCommand, Mode=OneWay}" ToolTip="Press 't' to quickly throw a dice." ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="42" Margin="699,438,0,0" VerticalAlignment="Top" Width="274" Content="Throw dice"/>
-        <Button Command="{Binding EndTurnCommand, Mode=OneWay}" ToolTip="Press 'e' to quickly end your turn." ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="41" Margin="700,578,0,0" VerticalAlignment="Top" Width="274" Content="End Turn"/>
-        <Button Command="{Binding BuyCommand, Mode=OneWay}" ToolTip="Press 'b' to  quickly buy a property" ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="43" Margin="700,485,0,0" VerticalAlignment="Top" Width="273" Content="Buy"/>
-        <Button Command="{Binding ManageCommand, Mode=OneWay}" ToolTip="Press 'm' to quickly manage your properties" ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="40" Margin="700,533,0,0" VerticalAlignment="Top" Width="274" Content="Manage Streets"/>
+        <Button Command="{Binding ThrowDiceCommand, Mode=OneWay}" ToolTip="{Binding Source={x:Static resources:Language.tooltipdice}}" ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="42" Margin="699,438,0,0" VerticalAlignment="Top" Width="274" Content="{Binding Source={x:Static resources:Language.dice}}" />
+        <Button Command="{Binding EndTurnCommand, Mode=OneWay}" ToolTip="{Binding Source={x:Static resources:Language.tooltipturn}}" ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="41" Margin="700,578,0,0" VerticalAlignment="Top" Width="274" Content="{Binding Source={x:Static resources:Language.endturn}}" />
+        <Button Command="{Binding BuyCommand, Mode=OneWay}" ToolTip="{Binding Source={x:Static resources:Language.tooltipbuy}}" ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="43" Margin="700,485,0,0" VerticalAlignment="Top" Width="273" Content="{Binding Source={x:Static resources:Language.buy}}" />
+        <Button Command="{Binding ManageCommand, Mode=OneWay}" ToolTip="{Binding Source={x:Static resources:Language.tooltipmanage}}" ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="2000" ToolTipService.BetweenShowDelay="2000" HorizontalAlignment="Left" Height="40" Margin="700,533,0,0" VerticalAlignment="Top" Width="274" Content="{Binding Source={x:Static resources:Language.managestreets}}"/>
 
         <ListBox HorizontalAlignment="Left" Height="236" Margin="699,197,0,0" VerticalAlignment="Top" Width="274" ItemsSource="{Binding Path=MyGame.GameInfo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsHitTestVisible="True"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="65" Margin="215,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Opacity="0.75"/>
-        <Label Content="Free Parking Money:" HorizontalAlignment="Left" Height="31" Margin="215,333,0,0" VerticalAlignment="Top" Width="127" FontSize="13"/>
+        <Label Content="{Binding Source={x:Static resources:Language.parkingmoney}}" HorizontalAlignment="Left" Height="31" Margin="215,333,0,0" VerticalAlignment="Top" Width="127" FontSize="13"/>
         <Label Content="{Binding MyGame.FreeParkingTreasure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="31" Margin="347,334,0,0" VerticalAlignment="Top" Width="92" FontSize="13"/>
 
 
@@ -265,7 +266,7 @@
         <Ellipse Visibility ="{Binding PlayerPostions[1][40], Converter={StaticResource BoolToVis}, Mode=TwoWay}" Fill="Green" HorizontalAlignment="Left" Height="20" Margin="40,594,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
         <Ellipse Visibility ="{Binding PlayerPostions[2][40], Converter={StaticResource BoolToVis}, Mode=TwoWay}" Fill="Blue" HorizontalAlignment="Left" Height="20" Margin="40,618,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
         <Ellipse Visibility ="{Binding PlayerPostions[3][40], Converter={StaticResource BoolToVis}, Mode=TwoWay}" Fill="Purple" HorizontalAlignment="Left" Height="20" Margin="62,618,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" />
-        <Button Command="{Binding BankruptCommand}" Content="Declare bankruptcy" HorizontalAlignment="Left" Height="41" Margin="700,624,0,0" VerticalAlignment="Top" Width="274" />
+        <Button Command="{Binding BankruptCommand}" Content="{Binding Source={x:Static resources:Language.bank}}" HorizontalAlignment="Left" Height="41" Margin="700,624,0,0" VerticalAlignment="Top" Width="274" />
         <Image HorizontalAlignment="Left" Height="167" Margin="98,121,0,0" VerticalAlignment="Top" Width="206" Source="/Monopoly;component/Data/Images/CommunityCard.jpg" RenderTransformOrigin="0.76,0.83">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -329,10 +330,10 @@
         <Rectangle ToolTip="{Binding ToolTipForTiles[38]}" ToolTipService.ShowDuration="40000" HorizontalAlignment="Left" Height="52" Stroke="Black" VerticalAlignment="Top" Width="91" Margin="584,476,0,0" Fill="Black" Opacity="0"/>
         <Rectangle ToolTip="{Binding ToolTipForTiles[39]}" ToolTipService.ShowDuration="40000" HorizontalAlignment="Left" Height="52" Stroke="Black" VerticalAlignment="Top" Width="91" Margin="584,532,0,0" Fill="Black" Opacity="0"/>
         <Rectangle ToolTip="{Binding ToolTipForTiles[40]}" ToolTipService.ShowDuration="40000" HorizontalAlignment="Left" Height="67" Stroke="Black" VerticalAlignment="Top" Width="65" Margin="26,587,0,0" Fill="Black" Opacity="0"/>
-        <Button Visibility="{Binding Cheat, Converter={StaticResource BoolToVis}}" Command="{Binding ThrowCheatDiceCommand}" Content="Cheat and move" HorizontalAlignment="Left" Height="27" Margin="798,165,0,0" VerticalAlignment="Top" Width="174" />
         <ComboBox Visibility="{Binding Cheat, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Left" ItemsSource="{Binding DiceAmount}" SelectedItem="{Binding CheatSelected}" Height="27" Margin="699,165,0,0" VerticalAlignment="Top" Width="94"/>
         <ComboBox Visibility="{Binding Cheat, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Left" ItemsSource="{Binding PlayerList}" SelectedIndex="{Binding SelectedPlayer}" Height="27" Margin="700,133,0,0" VerticalAlignment="Top" Width="94"/>
-        <Button Visibility="{Binding Cheat, Converter={StaticResource BoolToVis}}" Command="{Binding ChangePlayerCheatCommand}" Content="Change Player Cheat" HorizontalAlignment="Left" Height="27" Margin="799,133,0,0" VerticalAlignment="Top" Width="174" />
+        <Button Visibility="{Binding Cheat, Converter={StaticResource BoolToVis}}" Command="{Binding ChangePlayerCheatCommand}" Content="{Binding Source={x:Static resources:Language.cheatplayer}}" HorizontalAlignment="Left" Height="27" Margin="799,133,0,0" VerticalAlignment="Top" Width="174" />
+        <Button Visibility="{Binding Cheat, Converter={StaticResource BoolToVis}}" Command="{Binding ThrowCheatDiceCommand}" Content="{Binding Source={x:Static resources:Language.cheatmove}}" HorizontalAlignment="Left" Height="27" Margin="798,165,0,0" VerticalAlignment="Top" Width="174" />
 
     </Grid>
 </Window>

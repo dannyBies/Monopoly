@@ -1,4 +1,5 @@
-﻿namespace Monopoly.Model.Tiles {
+﻿using System;
+namespace Monopoly.Model.Tiles {
     /// <summary>
     /// Tile that sends you to jail
     /// </summary>
@@ -8,13 +9,13 @@
         }
 
         public override void DoAction(Player player) {
-            CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);        
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description));
             player.CurrentTile = CurrentGame.Jail;
             player.IsInJail = true;
         }
 
 		public override string GetCardInformation() {
-			return "You go to jail for stealing soap";
+            return Properties.Language.gotojail;
 		}
     }
 }

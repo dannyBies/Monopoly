@@ -113,7 +113,7 @@ namespace Monopoly.ViewModel {
 			get {
 				return _buyCommand ??
 					   (_buyCommand =
-						   new RelayCommand(p => MyGame.BuyBuilding() , p => CanBuy()));
+						   new RelayCommand(p => MyGame.CurrentPlayer.BuyBuilding() , p => CanBuy()));
 			}
 		}
 

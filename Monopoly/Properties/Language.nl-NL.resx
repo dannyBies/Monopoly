@@ -117,10 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bank" xml:space="preserve">
+    <value>Verklaar faillissement</value>
+  </data>
+  <data name="bought" xml:space="preserve">
+    <value>{0} kocht{1}</value>
+  </data>
+  <data name="buy" xml:space="preserve">
+    <value>Koop</value>
+  </data>
+  <data name="buystreet" xml:space="preserve">
+    <value>Kopen</value>
+  </data>
+  <data name="chance" xml:space="preserve">
+    <value>Je krijgt een kanskaart</value>
+  </data>
+  <data name="cheatdice" xml:space="preserve">
+    <value>{0} gooit {1}</value>
+  </data>
+  <data name="cheatmove" xml:space="preserve">
+    <value>Verplaats de speler</value>
+  </data>
+  <data name="cheatplayer" xml:space="preserve">
+    <value>Verander van speler</value>
+  </data>
+  <data name="community" xml:space="preserve">
+    <value>Je krijgt een community kaart</value>
+  </data>
+  <data name="company" xml:space="preserve">
+    <value>{0}{1}Dit bedrijf is van {2}{1}Het kost ${3} om dit te kopen{1}Als je de eigenaar van een bedrijf bent is de huur 4 keer het nummer dat gedobbeld wordt{1}Als je beide bedrijven hebt dan is de huur 10 keer het nummer dat gedobbeld wordt. {1}Mortgage value is ${4}</value>
+  </data>
+  <data name="companypay" xml:space="preserve">
+    <value>{0} betaald ${1} aan {2}</value>
+  </data>
+  <data name="dice" xml:space="preserve">
+    <value>Gooi de dobbelsteen</value>
+  </data>
+  <data name="downgrade" xml:space="preserve">
+    <value>{0} verkoopt {1}</value>
+  </data>
+  <data name="endturn" xml:space="preserve">
+    <value>beëindig je beurt</value>
+  </data>
+  <data name="freeparking" xml:space="preserve">
+    <value>Je krijgt geld als je hierop landt</value>
+  </data>
+  <data name="freeparkingpay" xml:space="preserve">
+    <value>{0} heeft een tas gevonden met ${1} erin</value>
+  </data>
+  <data name="gameover" xml:space="preserve">
+    <value>Spel afgelopen</value>
+  </data>
+  <data name="got" xml:space="preserve">
+    <value>heeft</value>
+  </data>
+  <data name="gotojail" xml:space="preserve">
+    <value>Je gaat de gevangenis in voor het stelen van zeep</value>
+  </data>
+  <data name="jail" xml:space="preserve">
+    <value>Laat je zeep niet vallen</value>
+  </data>
+  <data name="jailperson" xml:space="preserve">
+    <value>{0} zit nog steeds in de gevangenis</value>
+  </data>
+  <data name="jailvisit" xml:space="preserve">
+    <value>Je bezoekt de gevangenis om een vriend van je zeep te geven</value>
+  </data>
   <data name="loadgame" xml:space="preserve">
     <value>Laad een bestaand spel</value>
   </data>
+  <data name="managestreets" xml:space="preserve">
+    <value>Beheer je straten</value>
+  </data>
+  <data name="mortage" xml:space="preserve">
+    <value>Hypotheek</value>
+  </data>
+  <data name="mortaged" xml:space="preserve">
+    <value>{0} verhuurt {1}</value>
+  </data>
+  <data name="moves" xml:space="preserve">
+    <value>{0} gaat naar {1}</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
   <data name="newgame" xml:space="preserve">
     <value>Begin een nieuw spel</value>
+  </data>
+  <data name="onmortage" xml:space="preserve">
+    <value>Op hypotheek</value>
+  </data>
+  <data name="parkingmoney" xml:space="preserve">
+    <value>Belastingsgeld:</value>
+  </data>
+  <data name="property" xml:space="preserve">
+    <value>{0} {12} dit huis is eigendom van: {1} {12} {2}het kost ${3} om dit te kopen {12} Huur: ${4} {12} De kosten van het verbeteren van je straat zijn: ${5} {12} Met een huis is de huur: ${6} {12} Met twee huizen is de huur: ${7} {12} Met drie huizen is de huur: ${8} {12} Met 4 huizen is de huur: ${9} {12} Met een hotel is de huur: ${10} {12} De hypotheekwaarde is: ${11} {12} Als je de hele stad hebt dan wordt de huur verdubbeld.</value>
+  </data>
+  <data name="propertyhouses" xml:space="preserve">
+    <value>Er zijn {0} huizen gebouwd in deze straat {1}</value>
+  </data>
+  <data name="propertyowner" xml:space="preserve">
+    <value>niemand</value>
+  </data>
+  <data name="railroad" xml:space="preserve">
+    <value>{0}{1} De eigenaar van dit treinstation is: {2} {1} Het kost ${3} om dit te kopen {1} Huur met een treinstation${4}{1}Huur met 2 treinstations: ${5}{1}Huur met drie treinstations: ${6}{1} Huur met vier treinstations: ${7}{1} Hypotheekwaarde: ${8}</value>
+  </data>
+  <data name="railroadpay" xml:space="preserve">
+    <value>{0} betaald ${1} aan {2}</value>
+  </data>
+  <data name="sellstreet" xml:space="preserve">
+    <value>Verkopen</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>{0}{1} als je op deze plaats beland krijg je $400 zakgeld{1} als je er voorbij gaat krijg je $200</value>
+  </data>
+  <data name="startmoney" xml:space="preserve">
+    <value>{0} is op start gekomen, hij krijg $400 extra</value>
+  </data>
+  <data name="taxes" xml:space="preserve">
+    <value>Helaas moet je belasting betalen {0} Gelukkig hoef je in het echte leven niet zoveel te betalen *kuch kuch*</value>
+  </data>
+  <data name="taxespay10" xml:space="preserve">
+    <value>{0} moest ${1} betalen</value>
+  </data>
+  <data name="taxespay200" xml:space="preserve">
+    <value>{0} moest $200 betalen</value>
+  </data>
+  <data name="throwdice" xml:space="preserve">
+    <value>{0} gooit {1} en {2}</value>
+  </data>
+  <data name="tooltipbuy" xml:space="preserve">
+    <value>Klik 'b' om een straat te kopen</value>
+  </data>
+  <data name="tooltipdice" xml:space="preserve">
+    <value>Klik 't' om te dobbelen</value>
+  </data>
+  <data name="tooltipmanage" xml:space="preserve">
+    <value>Klik 'm' om je straten te beheren</value>
+  </data>
+  <data name="tooltipturn" xml:space="preserve">
+    <value>Klik 'e' om je beurt te eindigen</value>
+  </data>
+  <data name="totalplayers" xml:space="preserve">
+    <value>Aantal spelers:</value>
+  </data>
+  <data name="upgrade" xml:space="preserve">
+    <value>{0} koopt {1}</value>
+  </data>
+  <data name="upgradecost" xml:space="preserve">
+    <value>Koopkosten</value>
+  </data>
+  <data name="winner" xml:space="preserve">
+    <value>wint!</value>
   </data>
 </root>

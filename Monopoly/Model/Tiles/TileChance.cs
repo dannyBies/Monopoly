@@ -1,4 +1,5 @@
-﻿namespace Monopoly.Model.Tiles {
+﻿using System;
+namespace Monopoly.Model.Tiles {
 	/// <summary>
 	/// Tile to use a chancecard.
 	/// </summary>
@@ -8,16 +9,16 @@
 		}
 
 		public override void DoAction(Player player) {
-			CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description));
 
 			if(CurrentGame.ChanceCards.Peek() != null) {
-				CurrentGame.GameInfo.Enqueue(player.Name + " got " + CurrentGame.ChanceCards.Peek().Description);
+				CurrentGame.GameInfo.Enqueue(player.Name + " "+ Properties.Language.got + " " + CurrentGame.ChanceCards.Peek().Description);
 				CurrentGame.ChanceCards.Pop().Use(player);
 			}
 		}
 
 		public override string GetCardInformation() {
-			return "You get a chance card if you land here";
+            return Properties.Language.chance;
 		}
 	}
 }

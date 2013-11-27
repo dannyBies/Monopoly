@@ -1,4 +1,5 @@
 ﻿using Monopoly.Model.Tiles;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -88,6 +89,25 @@ namespace Monopoly.Model {
 			CurrentTile = tile;
 			CurrentTile.DoAction(this);
 		}
+
+
+        public void BuyBuilding() {
+            TileBuyable street = (TileBuyable)CurrentTile;
+
+            if (Money > street.Price) {
+                Money -= street.Price;
+                street.HasOwner = true;
+                street.Owner = this;
+                Streets.Add(street);
+                CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.bought, Name, street.Description));
+                ;
+                if (street is TileCompany) {
+                    TotalCompanies++;
+                } else if (street is TileRailRoad) {
+                    TotalRailRoads++;
+                }
+            }
+        }
 
 		public void RaisePropertyChanged(string prop) {
 			if(PropertyChanged != null) {

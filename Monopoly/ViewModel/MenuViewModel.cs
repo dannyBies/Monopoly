@@ -17,7 +17,7 @@ namespace Monopoly.ViewModel {
 
         public MenuViewModel() {
             MaxPlayers = new List<int> { 2, 3, 4 };
-			MessageBox.Show(Thread.CurrentThread.CurrentUICulture.DisplayName);
+            Languages = new string[] { "English", "Nederlands" };
         }
 
         # region Commands
@@ -31,21 +31,13 @@ namespace Monopoly.ViewModel {
             }
         }
 
-        private ICommand _changeLanguageCommand;
-        public ICommand ChangeLanguageCommand {
-            get {
-                return _changeLanguageCommand ??
-                       (_changeLanguageCommand =
-                        new RelayCommand(p => ChangeCulture()));
-            }
-        }
 
         private ICommand _startNewGameCommand;
         public ICommand StartNewGameCommand {
             get {
                 return _startNewGameCommand ??
                        (_startNewGameCommand =
-                        new RelayCommand(p => StartGame() , p => CanStartGame()));
+                        new RelayCommand(p => StartGame(), p => CanStartGame()));
             }
         }
 
@@ -60,25 +52,16 @@ namespace Monopoly.ViewModel {
             view.Closing += gmv.OnWindowClosing;
             view.Show();
             Application.Current.MainWindow.Close();
-        } 
+        }
 
         public bool CanStartGame() {
             return TotalPlayers >= 2;
         }
 
-        public void ChangeCulture()
-        {
-			MessageBox.Show(Thread.CurrentThread.CurrentUICulture.DisplayName);
-	       Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
-			Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-GB");
-			Properties.Language.Culture = new CultureInfo("en-GB");
-	          
-        }
-
         public void OpenFile() {
             var directoryInfo = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
             string filename = string.Empty;
-            
+
             if (directoryInfo != null) {
                 OpenFileDialog dlg = new OpenFileDialog {
                     Filter = "Monopoly Files (*.poly)|*.poly",
@@ -113,11 +96,50 @@ namespace Monopoly.ViewModel {
             }
         }
 
+        private string[] _languages;
+        public string[] Languages {
+            get { return _languages; }
+            set {
+                if (_languages != value) {
+                    _languages = value;
+                    RaisePropertyChanged("Languages");
+                }
+            }
+        }
+
+        private string _selectedLanguage;
+        public string SelectedLanguage {
+            get { return _selectedLanguage; }
+            set {
+                if (_selectedLanguage != value) {
+                    _selectedLanguage = value;
+                    RaisePropertyChanged("SelectedLanguage");
+                    ChangeCulture(value);
+                }
+            }
+        }
+
+        private void ChangeCulture(string value) {
+            switch (value.ToLower())
+            {
+                case "nederlands":
+                Properties.Settings.Default.Language = "nl-NL";
+                break;
+                case "english":
+                Properties.Settings.Default.Language = "en-GB";
+                break;
+                default:
+                break;
+            }
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Please restart the application to see your language.");
+        }
+
         private int _totalPlayers;
         public int TotalPlayers {
             get { return _totalPlayers; }
             set {
-                if(_totalPlayers != value) {
+                if (_totalPlayers != value) {
                     _totalPlayers = value;
                     RaisePropertyChanged("TotalPlayers");
                 }

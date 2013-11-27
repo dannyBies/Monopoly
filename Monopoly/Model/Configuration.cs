@@ -4,6 +4,7 @@ using System.Linq;
 using Monopoly.Model.Cards;
 using System.Collections.ObjectModel;
 using Monopoly.Model.Tiles;
+using System.Windows;
 
 
 namespace Monopoly.Model {
@@ -26,11 +27,10 @@ namespace Monopoly.Model {
 		public List<Card> GetAllCards(string cardLocation) {
 			List<Card> cards = new List<Card>();
 			string line;
-			StreamReader reader = new StreamReader(FileName + cardLocation);
+			StreamReader reader = new StreamReader(FileName + cardLocation+"-" + Properties.Settings.Default.Language+".txt");
 			while((line = reader.ReadLine()) != null) {
 				string[] lineInfo = line.Split('@');
-				
-				switch(lineInfo[0]) {
+                switch(lineInfo[0]) {
 					case "move":
 						if(lineInfo[2].Equals("Boardwalk")) {
 							cards.Add(new CardMove(lineInfo[1] , CurrentGame.Boardwalk));

@@ -12,7 +12,7 @@ money@pay hospital fees of $100@-100
 money@income tax refund - Collect $20@20
 money@pay school fees of $150@-150
 money@receive $25 consultancy fee@25
-money@you have won second prize in a beauty contest - Collect #10@10
+money@you have won second prize in a beauty contest - Collect $10@10
 money@you inherit $100@100
 move@go back 2 spaces@-2
 move@go 2 spaces forward@2

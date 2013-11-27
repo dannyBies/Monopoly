@@ -13,11 +13,11 @@
     
     <Grid>
         <Button Content="{Binding Source={x:Static resources:Language.newgame}}"  Command="{Binding StartNewGameCommand}" HorizontalAlignment="Left" Height="67" Margin="55,198,0,0" VerticalAlignment="Top" Width="157" />
-        <Button Content="Load a saved game" Command="{Binding OpenFileCommand}" HorizontalAlignment="Left" Height="67" Margin="605,198,0,0" VerticalAlignment="Top" Width="157"/>
+        <Button Content="{Binding Source={x:Static resources:Language.loadgame}}" Command="{Binding OpenFileCommand}" HorizontalAlignment="Left" Height="67" Margin="605,198,0,0" VerticalAlignment="Top" Width="157"/>
         <ComboBox Name="PlayerBox" ItemsSource="{Binding MaxPlayers}" HorizontalAlignment="Left" 
                   SelectedValue="{Binding TotalPlayers}" Height="25" Margin="170,168,0,0" VerticalAlignment="Top" Width="42" IsReadOnly="True"/>
-        <Label Content="Amount of players:" HorizontalAlignment="Left" Height="25" Margin="55,168,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button Command="{Binding ChangeLanguageCommand}" Content="Change Language" HorizontalAlignment="Left" Height="36" Margin="55,288,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="{Binding Source={x:Static resources:Language.totalplayers}}" HorizontalAlignment="Left" Height="25" Margin="55,168,0,0" VerticalAlignment="Top" Width="110"/>
+        <ComboBox ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" HorizontalAlignment="Left" Height="28" Margin="55,288,0,0" VerticalAlignment="Top" Width="157"/>
 
     </Grid>
 </Window>

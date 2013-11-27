@@ -13,15 +13,13 @@ namespace Monopoly.Model.Tiles {
 		}
 
 		public override void DoAction(Player player) {
-			CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
-			CurrentGame.GameInfo.Enqueue(player.Name + " landed on start, he gets an extra $400");
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description));
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.startmoney, player.Name));
 			player.Money += 400;
 		}
 
 		public override string GetCardInformation() {
-			return Description + Environment.NewLine +
-					"If you land on this tile you $400" + Environment.NewLine +
-					"Else if you pass this tile you get $200";
+            return string.Format(Properties.Language.start, Description, Environment.NewLine);
 		}
 	}
 }

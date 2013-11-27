@@ -1,4 +1,5 @@
-﻿namespace Monopoly.Model.Tiles {
+﻿using System;
+namespace Monopoly.Model.Tiles {
 
     /// <summary>
     /// Watch monkeys in their natural habitat.
@@ -9,11 +10,11 @@
             : base(game,  description) {
         }
         public override void DoAction(Player player) {
-            CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description)); 
         }
 
 		public override string GetCardInformation() {
-			return "You visit jail to give your buddy soap because he somehow lost it";
+            return Properties.Language.jailvisit;
 		}
     }
 }

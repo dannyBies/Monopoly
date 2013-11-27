@@ -18,8 +18,7 @@ namespace Monopoly.Model {
 		public Player CurrentPlayer { get; set; }
 		public int PlayerTurn { get; set; }
 		public Dice PlayerDice { get; set; }
-		public string NewLine { get; set; }
-
+		
 		public QueueLimit<string> GameInfo { get; set; }
 
 		public TileLinkedList Board { get; set; }
@@ -46,7 +45,6 @@ namespace Monopoly.Model {
 			GameInfo = new QueueLimit<string>(70);
 			PlayerDice = new Dice();
 			PlayerTurn = 0;
-			NewLine = Environment.NewLine;
 		}
 		/// <summary>
 		/// Constructor for loading an existing game
@@ -107,7 +105,7 @@ namespace Monopoly.Model {
 		/// Loads all the cards from a file and fills 2 decks with it
 		/// </summary>
 		private void LoadCards() {
-			List<Card> cards = CurrentConfigFile.GetAllCards(@"Config\CardDescriptions.txt").ToList();
+			List<Card> cards = CurrentConfigFile.GetAllCards(@"Config\CardDescriptions").ToList();
 			ChanceCards = new Deck(cards.GetRange(0 , (cards.Count / 2)));
 			cards.RemoveRange(0 , cards.Count / 2);
 			CommunityCards = new Deck(cards);
@@ -121,52 +119,33 @@ namespace Monopoly.Model {
 			CurrentConfigFile.SaveData(filename);
 		}
 
-		public void NextTurn() {
-			PlayerTurn++;
-			if((PlayerTurn % Players.Count) == 0) {
-				PlayerTurn = 0;
-			}
-			CurrentPlayer = Players[PlayerTurn];
-		}
-
-		public void BuyBuilding() {
-			TileBuyable street = (TileBuyable)CurrentPlayer.CurrentTile;
-
-			if(CurrentPlayer.Money > street.Price) {
-				CurrentPlayer.Money -= street.Price;
-				street.HasOwner = true;
-				street.Owner = CurrentPlayer;
-				CurrentPlayer.Streets.Add(street);
-				GameInfo.Enqueue(CurrentPlayer.Name + " bought " + street.Description);
-				if(street is TileCompany) {
-					CurrentPlayer.TotalCompanies++;
-				} else if(street is TileRailRoad) {
-					CurrentPlayer.TotalRailRoads++;
-				}
-			}
-		}
-
 		public void ThrowDiceAndMovePlayer() {
 			CurrentPlayer.DiceEyes = PlayerDice.ThrowDice();
 			PlayerDice.HasBeenThrown = true;
-			GameInfo.Enqueue(CurrentPlayer.Name + " has thrown " + PlayerDice.FirstDice + " and " + PlayerDice.SecondDice);
+			GameInfo.Enqueue(String.Format(Properties.Language.throwdice,CurrentPlayer.Name,PlayerDice.FirstDice,PlayerDice.SecondDice));
 			CurrentPlayer.MoveTo(CurrentPlayer.DiceEyes);
 		}
 
 		public void ThrowDiceAndMovePlayer(int value) {
 			CurrentPlayer.DiceEyes = value;
 			PlayerDice.HasBeenThrown = true;
-			GameInfo.Enqueue(CurrentPlayer.Name + " has thrown " + value);
+			GameInfo.Enqueue(String.Format(Properties.Language.cheatdice,CurrentPlayer.Name,value));
+            
 			CurrentPlayer.MoveTo(CurrentPlayer.DiceEyes);
 		}
 
+        public void NextTurn() {
+            PlayerTurn++;
+            if ((PlayerTurn % Players.Count) == 0) {
+                PlayerTurn = 0;
+            }
+            CurrentPlayer = Players[PlayerTurn];
+        }
 		public void EndTurn() {
 			if(!PlayerDice.IsDouble()) {
-				PlayerDice.HasBeenThrown = false;
 				NextTurn();
-			} else {
-				PlayerDice.HasBeenThrown = false;
 			}
+            PlayerDice.HasBeenThrown = false;
 		}
 
 		#endregion

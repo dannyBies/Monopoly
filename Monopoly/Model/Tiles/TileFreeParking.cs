@@ -1,4 +1,5 @@
-﻿namespace Monopoly.Model.Tiles {
+﻿using System;
+namespace Monopoly.Model.Tiles {
 
 	/// <summary>
 	/// tile that gets all the tax money
@@ -9,9 +10,9 @@
 		}
 
 		public override void DoAction(Player player) {
-			CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
-			if(CurrentGame.FreeParkingTreasure != 0) {
-				CurrentGame.GameInfo.Enqueue(player.Name + " found a hidden bag with $" + CurrentGame.FreeParkingTreasure + " in it");
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description));
+            if (CurrentGame.FreeParkingTreasure != 0) {
+                CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.freeparkingpay, player.Name, CurrentGame.FreeParkingTreasure));
 			}
 
 			player.Money += CurrentGame.FreeParkingTreasure;
@@ -19,7 +20,7 @@
 		}
 
 		public override string GetCardInformation() {
-			return "If you land here you get some hidden goodies, you lucky bastard";
+            return Properties.Language.freeparking;
 		}
 	}
 }

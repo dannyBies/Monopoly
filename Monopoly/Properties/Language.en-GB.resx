@@ -117,10 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bank" xml:space="preserve">
+    <value>Declare bankruptcy</value>
+  </data>
+  <data name="bought" xml:space="preserve">
+    <value>{0} bought {1}</value>
+  </data>
+  <data name="buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="buystreet" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="chance" xml:space="preserve">
+    <value>You get a chance card if you land here</value>
+  </data>
+  <data name="cheatdice" xml:space="preserve">
+    <value>{0} has thrown{1}</value>
+  </data>
+  <data name="cheatmove" xml:space="preserve">
+    <value>Move player</value>
+  </data>
+  <data name="cheatplayer" xml:space="preserve">
+    <value>Change player</value>
+  </data>
+  <data name="community" xml:space="preserve">
+    <value>You get a community card if you land here</value>
+  </data>
+  <data name="company" xml:space="preserve">
+    <value>{0}{1}this property is currently owned by {2}{1}it costs ${3} to buy this {1}If one 'Utility' is owned rent is 4 times the amount shown on dice {1}If both 'utilities are owned rent is 10 times amount shown on dice. {1} Mortgage value is ${4}</value>
+  </data>
+  <data name="companypay" xml:space="preserve">
+    <value>{0} paid ${1} to {2}</value>
+  </data>
+  <data name="dice" xml:space="preserve">
+    <value>Throw your dice</value>
+  </data>
+  <data name="downgrade" xml:space="preserve">
+    <value>{0} downgraded{1}</value>
+  </data>
+  <data name="endturn" xml:space="preserve">
+    <value>End your turn</value>
+  </data>
+  <data name="freeparking" xml:space="preserve">
+    <value>If you land here you get some hidden goodies, you lucky bastard</value>
+  </data>
+  <data name="freeparkingpay" xml:space="preserve">
+    <value>{0} found a hidden bag with ${1} in it</value>
+  </data>
+  <data name="gameover" xml:space="preserve">
+    <value>Game over</value>
+  </data>
+  <data name="got" xml:space="preserve">
+    <value>got</value>
+  </data>
+  <data name="gotojail" xml:space="preserve">
+    <value>You go to jail for stealing soap</value>
+  </data>
+  <data name="jail" xml:space="preserve">
+    <value>Don't drop your soap</value>
+  </data>
+  <data name="jailperson" xml:space="preserve">
+    <value>{0} is still in jail</value>
+  </data>
+  <data name="jailvisit" xml:space="preserve">
+    <value>You visit jail to give your buddy soap because he somehow lost it</value>
+  </data>
   <data name="loadgame" xml:space="preserve">
-    <value>Start a saved game</value>
+    <value>Load a game</value>
+  </data>
+  <data name="managestreets" xml:space="preserve">
+    <value>Manage streets</value>
+  </data>
+  <data name="mortage" xml:space="preserve">
+    <value>Mortage</value>
+  </data>
+  <data name="mortaged" xml:space="preserve">
+    <value>{0} mortaged{1}</value>
+  </data>
+  <data name="moves" xml:space="preserve">
+    <value>{0} moved to {1}</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="newgame" xml:space="preserve">
     <value>Start a new game</value>
+  </data>
+  <data name="onmortage" xml:space="preserve">
+    <value>On mortage</value>
+  </data>
+  <data name="parkingmoney" xml:space="preserve">
+    <value>Free parking money:</value>
+  </data>
+  <data name="property" xml:space="preserve">
+    <value>{0} {12} this property is currently owned by {1} {12} {2} it costs ${3} to buy this {12} Rent ${4} {12} Costs to upgrade your street: ${5} {12} With 1 house your rent is: ${6} {12} With 2 house your rent is: ${7} {12} With 3 house your rent is: ${8} {12} With 4 house your rent is: ${9} {12} With a hotel your rent is: ${10} {12} Mortgage value: ${11} {12} if you have the whole city the rent is doubled.city the rent is doubled."</value>
+  </data>
+  <data name="propertyhouses" xml:space="preserve">
+    <value>There have been {0} houses built in this street {1}</value>
+  </data>
+  <data name="propertyowner" xml:space="preserve">
+    <value>nobody</value>
+  </data>
+  <data name="railroad" xml:space="preserve">
+    <value>{0}{1} this railroad is currently owned by {2} {1} it costs ${3} to buy this {1} Rent when you have 1 railroad: ${4}{1} Rent when you have 2 railroads: ${5}{1} Rent when you have 3 railroads: ${6}{1} Rent when you have 4 railroads: ${7}{1} Mortage value: ${8}</value>
+  </data>
+  <data name="railroadpay" xml:space="preserve">
+    <value>{0} paid ${1} to {2}</value>
+  </data>
+  <data name="sellstreet" xml:space="preserve">
+    <value>Downgrade</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>{0}{1}If you land on this tile you $400 {1}Else if you pass this tile you get $200</value>
+  </data>
+  <data name="startmoney" xml:space="preserve">
+    <value>{0} landed on start, he gets an extra $400</value>
+  </data>
+  <data name="taxes" xml:space="preserve">
+    <value>Unfortunately you have to pay taxes but don't worry {0} In real life you won't have to pay 10% of your total net worth!</value>
+  </data>
+  <data name="taxespay10" xml:space="preserve">
+    <value>{0} had to pay ${1}</value>
+  </data>
+  <data name="taxespay200" xml:space="preserve">
+    <value>{0} had to pay $200</value>
+  </data>
+  <data name="throwdice" xml:space="preserve">
+    <value>{0} has thrown {1} and {2}</value>
+  </data>
+  <data name="tooltipbuy" xml:space="preserve">
+    <value>Press 'b' to  quickly buy a property</value>
+  </data>
+  <data name="tooltipdice" xml:space="preserve">
+    <value>Press 't' to quickly throw a dice.</value>
+  </data>
+  <data name="tooltipmanage" xml:space="preserve">
+    <value>Press 'm' to quickly manage your properties</value>
+  </data>
+  <data name="tooltipturn" xml:space="preserve">
+    <value>Press 'e' to quickly end your turn.</value>
+  </data>
+  <data name="totalplayers" xml:space="preserve">
+    <value>Amount of players:</value>
+  </data>
+  <data name="upgrade" xml:space="preserve">
+    <value>{0} upgraded {1}</value>
+  </data>
+  <data name="upgradecost" xml:space="preserve">
+    <value>Upgradecosts</value>
+  </data>
+  <data name="winner" xml:space="preserve">
+    <value>wins!</value>
   </data>
 </root>

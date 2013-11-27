@@ -11,14 +11,14 @@ namespace Monopoly.Model.Tiles {
 		}
 
 		public override void DoAction(Player player) {
-			CurrentGame.GameInfo.Enqueue(player.Name + " moved to " + Description);
+            CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.moves, player.Name, Description));
 
 			if(player.Money > 1000) {
-				CurrentGame.GameInfo.Enqueue(player.Name + " had to pay $200 in taxes");
+				CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.taxespay200,player.Name));
 				CurrentGame.FreeParkingTreasure += 200;
 				player.Money -= 200;
 			} else {
-				CurrentGame.GameInfo.Enqueue(player.Name + " had to pay $ " + player.Money / 10);
+				CurrentGame.GameInfo.Enqueue(String.Format(Properties.Language.taxespay10,player.Name,player.Money/10));
 				CurrentGame.FreeParkingTreasure += player.Money / 10;
 				player.Money -= player.Money / 10;
 			}
@@ -27,9 +27,7 @@ namespace Monopoly.Model.Tiles {
 
 		public override string GetCardInformation()
 		{
-			return "Unfortunately you have to pay taxes but don't worry " + Environment.NewLine +
-							"in real life you won't have to pay 10% of your total net worth!";
-						
+            return String.Format(Properties.Language.taxes, Environment.NewLine);					
 		}
 	}
 }

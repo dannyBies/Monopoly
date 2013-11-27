@@ -46,7 +46,7 @@
 				}
 			} else if(TotalUpgrades < 5) {
 				if(Owner.Money > UpgradeCost) {
-					CurrentGame.GameInfo.Enqueue(Owner.Name + " upgraded " + Description);
+                    CurrentGame.GameInfo.Enqueue(Properties.Language.upgrade);
 					TotalUpgrades++;
 					Owner.Money -= UpgradeCost;
 				}
@@ -58,7 +58,7 @@
 		/// </summary>
 		public void Downgrade() {
 			if(TotalUpgrades > 1) {
-				CurrentGame.GameInfo.Enqueue(Owner.Name + " downgraded " + Description);
+				CurrentGame.GameInfo.Enqueue(Properties.Language.downgrade);
 				TotalUpgrades--;
 				Owner.Money += UpgradeCost;
 			} else if(TotalUpgrades == 1) {
@@ -66,7 +66,7 @@
 				HasBuildings = false;
 				Owner.Money += UpgradeCost;
 			} else {
-				CurrentGame.GameInfo.Enqueue(Owner.Name + " mortaged " + Description);
+                CurrentGame.GameInfo.Enqueue(Properties.Language.mortaged);
 				OnMortage = true;
 				Owner.Money += Mortage;
 			}

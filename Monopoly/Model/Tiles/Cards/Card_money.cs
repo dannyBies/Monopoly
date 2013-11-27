@@ -1,4 +1,5 @@
 ﻿
+using System.Windows;
 namespace Monopoly.Model.Cards {
 	/// <summary>
 	/// Card that gives or takes money from the player
