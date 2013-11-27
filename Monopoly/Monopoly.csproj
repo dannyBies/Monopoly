@@ -125,10 +125,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Tiles\Cards\Card.cs" />
+    <Compile Include="Model\Cards\Card.cs" />
     <Compile Include="Model\Configuration.cs" />
-    <Compile Include="Model\Tiles\Cards\Card_money.cs" />
-    <Compile Include="Model\Tiles\Cards\Card_move.cs" />
+    <Compile Include="Model\Cards\Card_money.cs" />
+    <Compile Include="Model\Cards\Card_move.cs" />
     <Compile Include="Model\Deck.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\IBuyable.cs" />
