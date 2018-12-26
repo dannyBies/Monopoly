@@ -60,7 +60,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -190,9 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\Images\Board.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Config\CardDescriptions-nl-NL.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\Board\Board_Normal.txt" />
