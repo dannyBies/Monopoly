@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monopoly.Audio;
+using System;
 
 namespace Monopoly.Model
 {
@@ -21,6 +22,8 @@ namespace Monopoly.Model
 
         public int ThrowDice()
         {
+            AudioManager.PlayRollDiceAudio();
+
             FirstDice = Random.Next(1, 6);
             SecondDice = Random.Next(1, 6);
             return (FirstDice + SecondDice);

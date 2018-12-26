@@ -8,6 +8,7 @@ using Microsoft.Win32;
 using System.Windows.Input;
 using Monopoly.View;
 using System.Windows;
+using Monopoly.Audio;
 
 namespace Monopoly.ViewModel {
     /// <summary>
@@ -46,6 +47,7 @@ namespace Monopoly.ViewModel {
         #region Command methods
 
         public void StartGame() {
+            AudioManager.PlayClickAudio();
             GameView view = new GameView();
             GameViewModel gmv = new GameViewModel(TotalPlayers);
             view.DataContext = gmv;
